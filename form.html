@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alzheimer's Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6fc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: green;
+            text-align: center;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+
+    <script>
+        function handleSubmit() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Alzheimer's Prediction</h2>
+        <form method="post" action="/" onsubmit="handleSubmit()">
+            <label for="mmse">MMSE Score:</label>
+            <input type="number" name="mmse" step="0.01" required>
+
+            <label for="functional_assessment">Functional Assessment:</label>
+            <input type="number" name="functional_assessment" step="0.01" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="loading" class="loading" style="display: none;">
+            Processing prediction...
+        </div>
+
+        {% if result %}
+            <div class="result">Prediction: {{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
