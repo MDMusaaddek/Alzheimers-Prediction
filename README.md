@@ -131,17 +131,6 @@ Place the compatible model and scaler files in the `model/` directory before sta
 
 **Important:** The model, scaler, and input features must be compatible. The uploaded notebook and `main.py` currently use different input feature configurations, so this integration should be verified before relying on the predictions.
 
-### 5. Run the web application
-
-```bash
-uvicorn main:app --reload
-```
-
-Open the following address in your browser:
-
-http://127.0.0.1:8000
-
-Enter the required assessment scores and submit the form to view the model's prediction.
 
 ## 📊 Model Evaluation
 
@@ -166,10 +155,10 @@ Model predictions may be inaccurate and should not be used to make medical or tr
 
 ## 👨‍💻 Author
 
-**MD Musaaddek**
+MD Musaaddek
 
 GitHub: [@MDMusaaddek](https://github.com/MDMusaaddek)
 
-## 📄 License
+📄 License
 
 A license has not yet been specified. Choose an appropriate license before distributing the source code, model files, or other project materials. Check the licenses of any third-party datasets and models before redistributing them.
